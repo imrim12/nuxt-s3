@@ -5,7 +5,7 @@ export interface ModuleOptions {}
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: 'nuxt-s3-client',
+    name: 'nuxt-s3',
     configKey: 's3'
   },
   // Default configuration options of the Nuxt module
@@ -16,7 +16,7 @@ export default defineNuxtModule<ModuleOptions>({
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
     addServerHandler({
       route: '/api/s3',
-      method: 'PUT',
+      method: 'put',
       middleware: true,
       lazy: true,
       handler: resolver.resolve('./runtime/handler')
